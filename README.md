@@ -1,1 +1,1 @@
-# solar_system
+# SolarSystem

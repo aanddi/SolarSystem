@@ -1,8 +1,18 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: aliceblue;
+}
+
+:root {
+  background-color: #311f28;
 }
 
 a {
   color: #00B7FF;
+}
+
+img {
+  width: 640px;
+  height: 360px;
 }

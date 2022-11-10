@@ -1,3 +1,4 @@
+/*_______________| ZERO |_______________*/
 *,
 *::before,
 *::after {
@@ -5,17 +6,26 @@
 	margin: 0;
 	border: 0;
 	box-sizing: border-box;
+	color: #fff;
 }
 
 html,
 body {
 	height: 100%;
-	line-height: 1;
-	font-family: Poppins;
 	font-weight: 500;
-	color: rgb(109, 34, 34);
+	font-family: Arial, Helvetica, sans-serif;
 	font-size: 15;
 }
+
+/*_______________| CONTAINER |_______________*/
+
+[class*="__container"] {
+	max-width: 1515px;
+	padding: 0px 15px;
+	margin: 0px auto;
+}
+
+/*_______________| WRAPPER |_______________*/
 
 .wrapper {
 	min-height: 100%;
@@ -24,42 +34,46 @@ body {
 	flex-direction: column;
 }
 
-.page {
-	flex: 1 1 auto;
-  background-color: #0080FF;
-}
-
 .header {
-  background-color: #212529;
-}
-
-[class*="__container"] {
-	max-width: 1515px;
-	padding: 0px 15px;
-	margin: 0px auto;
+	background-color: #212529;
 }
 
 .footer {
-  height: 50px;
-  display: flex;
-  align-items: center;
-  color: #fff;
-  background-color: #000;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	color: #000;
+	background-color: #606061;
 }
 
-.page__container {
-  padding: 50px 0px 0px 0px;
+/*_______________| PAGE |_______________*/
+
+.page {
+	flex: 1 1 auto;
+	background-color: #000;
+	padding: 50px 0px;
 }
 
-.page__container > *:not(:last-child) {
-  margin: 0px 0px 20px 0px;
+.page__container>*:not(:last-child) {
+	margin: 0px 0px 30px 0px;
 }
 
+.page__header {
+	text-align: center;
+}
+
+.page__header>*:not(:last-child) {
+	margin: 0px 0px 30px 0px;
+}
+
+/*_______________| IMG and TEXT |_______________*/
 img {
-  width: 640px;
-  height: 360px;
+	width: 640px;
+	height: 360px;
+	margin: 0 auto;
 }
 
+h1,
 h4 {
-  line-height: 150%;
+	line-height: 200%;
 }

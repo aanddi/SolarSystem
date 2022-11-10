@@ -1,13 +1,66 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"></script>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"></script>
 </head>
+
 <body>
-    <%- body %>
+  <div class="wrapper">
+
+    <header class="header">
+      <div class="header__container">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="background-color: #e3f2fd">
+          <div class="container-fluid">
+            <a href="#" class="navbar-brand">
+              <img src="images/logo.png" height="35" alt="CoolBrand" />
+            </a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse9">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse9">
+              <div class="navbar-nav">
+                <a href="/" class="nav-item nav-link active">Главная</a>
+                <a href="/" class="nav-item nav-link">Солнце</a>
+                <a href="/" class="nav-item nav-link">Меркурий</a>
+                <a href="/" class="nav-item nav-link">Венера</a>
+                <a href="/" class="nav-item nav-link">Земля</a>
+                <a href="/" class="nav-item nav-link">Марс</a>
+                <a href="/" class="nav-item nav-link">Юпитер</a>
+                <a href="/" class="nav-item nav-link">Сатурн</a>
+                <a href="/" class="nav-item nav-link">Уран</a>
+                <a href="/" class="nav-item nav-link">Нептун</a>
+              </div>
+              <div class="navbar-nav ms-auto">
+                <a href="#" class="nav-item nav-link">Войти</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+    </header>
+
+    <main class="page">
+      <div class="page__container">
+        <%- body %>
+      </div>
+    </main>
+
+
+    <footer class="footer">
+      <div class="footer__container">
+        Andrey Kuropatkin
+      </div>
+    </footer>
+
+  </div>
 </body>
+
 </html>

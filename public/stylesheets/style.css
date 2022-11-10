@@ -1,15 +1,58 @@
+*,
+*::before,
+*::after {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+
+html,
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  color: aliceblue;
+	height: 100%;
+	line-height: 1;
+	font-family: Poppins;
+	font-weight: 500;
+	color: rgb(109, 34, 34);
+	font-size: 15;
 }
 
-:root {
-  background-color: #311f28;
+.wrapper {
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
 }
 
-a {
-  color: #00B7FF;
+.page {
+	flex: 1 1 auto;
+  background-color: #0080FF;
+}
+
+.header {
+  background-color: #212529;
+}
+
+[class*="__container"] {
+	max-width: 1515px;
+	padding: 0px 15px;
+	margin: 0px auto;
+}
+
+.footer {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  background-color: #000;
+}
+
+.page__container {
+  padding: 50px 0px 0px 0px;
+}
+
+.page__container > *:not(:last-child) {
+  margin: 0px 0px 20px 0px;
 }
 
 img {

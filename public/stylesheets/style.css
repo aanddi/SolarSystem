@@ -77,3 +77,18 @@ h1,
 h4 {
 	line-height: 200%;
 }
+
+/*_______________| ERROR |_______________*/
+.error {
+	padding: 100px 0px 0px 0px;
+	text-align: center;
+}
+
+.error>*:not(:last-child) {
+	margin: 0px 0px 10px 0px;
+}
+
+.error-img {
+	width: 70px;
+	height: 70px;
+}

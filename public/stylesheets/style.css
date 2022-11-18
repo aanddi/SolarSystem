@@ -17,6 +17,22 @@ body {
 	font-size: 15;
 }
 
+h1,
+h4 {
+	line-height: 200%;
+}
+
+img {
+	width: 640px;
+	height: 360px;
+	margin: 0 auto;
+	transition: all 0.4s ease-out;
+}
+
+img:hover {
+	transform: scale(1.1);
+}
+
 /*_______________| CONTAINER |_______________*/
 
 [class*="__container"] {
@@ -43,7 +59,7 @@ body {
 	display: flex;
 	align-items: center;
 	color: #000;
-	background-color: #606061;
+	background-color: #474748;
 }
 
 /*_______________| PAGE |_______________*/
@@ -51,10 +67,14 @@ body {
 .page {
 	flex: 1 1 auto;
 	background-color: #000;
-	padding: 50px 0px;
+	padding: 50px 0px;	
 }
 
-.page__container>*:not(:last-child) {
+.page__wrapper {
+	animation: main 1.5s 1;
+}
+
+.page__wrapper>*:not(:last-child) {
 	margin: 0px 0px 30px 0px;
 }
 
@@ -66,16 +86,16 @@ body {
 	margin: 0px 0px 30px 0px;
 }
 
-/*_______________| IMG and TEXT |_______________*/
-img {
-	width: 640px;
-	height: 360px;
-	margin: 0 auto;
-}
+/*_______________| ANIMATION |_______________*/
 
-h1,
-h4 {
-	line-height: 200%;
+@keyframes main {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
 }
 
 /*_______________| ERROR |_______________*/

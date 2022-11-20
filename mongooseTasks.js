@@ -1,13 +1,15 @@
 var mongoose = require('mongoose')
 mongoose.connect('mongodb://127.0.0.1:27017/')
 
-var planet = mongoose.model('planet', { name: String })
+var schema = mongoose.Schema({ name: String })
 
-var solar = new planet({ name: 'Марс' })
-solar.save(function (err) {
-    if (err) {
-        console.log(err)
-    } else {
-        console.log('Hello world!')
-    }
+schema.methods.meow = function(){
+    console.log(this.get("name") + ", hello")
+}
+
+var planet = mongoose.model('planet', schema)
+
+var solarsys = new planet({ name: 'Mars' })
+solarsys.save(function (err) {
+   solarsys.meow()
 })

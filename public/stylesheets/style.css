@@ -59,8 +59,20 @@ img:hover {
 	display: flex;
 	align-items: center;
 	color: #000;
-	background-color: #474748;
+	background-color: #212529;
 }
+
+.footer__link {
+	color: #fff;
+	text-decoration: none;
+}
+
+.footer__link:hover {
+	color: #fff;
+	text-decoration: underline;
+}
+
+
 
 /*_______________| PAGE |_______________*/
 
@@ -74,6 +86,7 @@ img:hover {
 	animation: main 1.5s 1;
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	margin: 0px -40px;
 }
 

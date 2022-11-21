@@ -84,6 +84,7 @@ img:hover {
 	animation: main 1.5s 1;
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	margin: 0px -40px;
 }
 
@@ -94,8 +95,6 @@ img:hover {
 .page__content>*:not(:last-child) {
 	margin: 0px 0px 30px 0px;
 }
-
-
 
 /*_______________| ANIMATION |_______________*/
 

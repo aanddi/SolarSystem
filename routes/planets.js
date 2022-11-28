@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 router.get('/:nick', function(req, res, next) {
   Planet.findOne({nick:req.params.nick}, function(err, planet){
         if(err) return next(err)
-        if(!planet) return next(new Error("Нет такого героя в этой книжке"))
+        if(!planet) return next(new Error("Нет такой планеты в солнечной системе"))
         res.render('solsytem', {
             title: planet.title,
             picture: planet.avatar,

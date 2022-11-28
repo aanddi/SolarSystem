@@ -41,7 +41,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error', 
   {
-    picture: "images/error.png",
+    picture: "/images/error.png",
     title: 'Упс, ошибка...'
   });
 });

@@ -4,11 +4,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose')
-mongoose.connect('mongodb://127.0.0.1:27017/solarsystem')
-
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var planets = require('./routes/planets');
 
 var app = express();
 
@@ -25,6 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/planets', planets);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -47,3 +47,4 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+mongoose.connect('mongodb://127.0.0.1:27017/solarsystem')

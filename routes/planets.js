@@ -1,14 +1,25 @@
 var express = require('express');
 var router = express.Router();
+var Planet = require("../models/planet").Planet
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('Новый маршрутизатор, для маршрутов, начинающихся с planets');
+  res.send('Новый маршрутизатор, для маошрутов, начинающихся с Planet');
 });
 
-/* Страница планет */
-router.get("/:nick", function(req, res, next) {
-  res.send(req.params.nick);
-});
+/* Страница героев */
+router.get('/:nick', function(req, res, next) {
+  Planet.findOne({nick:req.params.nick}, function(err, planet){
+        if(err) return next(err)
+        if(!planet) return next(new Error("Нет такого героя в этой книжке"))
+        res.render('solsytem', {
+            title: planet.title,
+            picture: planet.avatar,
+            desc1: planet.desc1,
+            desc2: planet.desc2,
+            desc3: planet.desc3
+        })
+    })
+})
 
 module.exports = router;

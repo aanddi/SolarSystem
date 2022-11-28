@@ -10,10 +10,12 @@ unique: true,
 required: true
 },
 avatar: String,
-desc: String,
+desc1: String,
+desc2: String,
+desc3: String,
 created:{
 type:Date,
 default:Date.now
 }
 })
-module.exports.planet = mongoose.model("planet", planetSchema)
+module.exports.Planet = mongoose.model("planet", planetSchema)

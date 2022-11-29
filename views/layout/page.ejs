@@ -5,7 +5,7 @@
   <title>
     <%= title %>
   </title>
-  <link rel='stylesheet' href='/stylesheets/style.css'/>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
   <link rel="icon" href="/images/favicon.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -27,16 +27,14 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse9">
               <div class="navbar-nav">
-                <a href="/planets/solarsystem" class="nav-item nav-link active">Главная</a>
-                <a href="/planets/sun" class="nav-item nav-link">Солнце</a>
-                <a href="/planets/mercury" class="nav-item nav-link">Меркурий</a>
-                <a href="/planets/venus" class="nav-item nav-link">Венера</a>
-                <a href="/planets/earth" class="nav-item nav-link">Земля</a>
-                <a href="/planets/mars" class="nav-item nav-link">Марс</a>
-                <a href="/planets/jupiter" class="nav-item nav-link">Юпитер</a>
-                <a href="/planets/saturn" class="nav-item nav-link">Сатурн</a>
-                <a href="/planets/uranus" class="nav-item nav-link">Уран</a>
-                <a href="/planets/neptune" class="nav-item nav-link">Нептун</a>
+                <a href="/" class="nav-item nav-link active">Главная</a>
+                <% menu.forEach(function(planet){ %>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/planets/<%=planet.nick%>">
+                      <%=planet.title%>
+                    </a>
+                  </li>
+                  <% }) %>
               </div>
               <div class="navbar-nav ms-auto">
                 <a href="#" class="nav-item nav-link">Войти</a>
@@ -57,7 +55,7 @@
 
     <footer class="footer">
       <div class="footer__container">
-       <a class="footer__link" href="https://github.com/aanddi">Andrey Kuropatkin</a>
+        <a class="footer__link" href="https://github.com/aanddi">Andrey Kuropatkin</a>
       </div>
     </footer>
 

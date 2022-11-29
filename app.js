@@ -42,7 +42,8 @@ app.use(function(err, req, res, next) {
   res.render('error', 
   {
     picture: "/images/error.png",
-    title: 'Упс, ошибка...'
+    title: 'Упс, ошибка...',
+    menu:[]
   });
 });
 

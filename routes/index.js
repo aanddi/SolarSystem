@@ -6,12 +6,11 @@ var Planet = require("../models/planet").Planet
 /* GET home page. */
 router.get('/', function (req, res, next) {
   Planet.find({}, { _id: 0, title: 1, nick: 1 }, function (err, menu) {
-    res.render('index', {
+    res.cookie('greeting', 'HelloWorld!').render('index', {
       title: 'Express',
       menu: menu
     });
   })
-
 });
 
 

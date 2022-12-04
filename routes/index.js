@@ -9,12 +9,11 @@ router.get('/', function (req, res, next) {
     req.session.greeting = "HelloWorld!",
       res.cookie('greeting', 'HelloWorld!').render('index', {
         title: 'Express',
-        menu: menu
+        menu: menu,
+        counter:req.session.counter
       });
   })
-
 });
-
 
 /* Главная 
 router.get('/', function (req, res, next) {

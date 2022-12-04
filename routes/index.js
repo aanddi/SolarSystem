@@ -15,6 +15,14 @@ router.get('/', function (req, res, next) {
   })
 });
 
+/* GET login/registration page. */
+router.get('/logreg', function(req, res, next) {
+  res.render('logreg',{
+    title: 'Вход'
+  });
+  });
+  
+
 /* Главная 
 router.get('/', function (req, res, next) {
   res.render('solsytem', {

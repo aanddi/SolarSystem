@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var checkAuth = require("./../middleware/checkAuth.js")
 var Planet = require("../models/planet").Planet
 var async = require("async")
 
@@ -9,7 +10,7 @@ router.get('/', function(req, res, next) {
 });
 
 /* Страница ведущих */
-router.get('/:nick', function(req, res, next) {
+router.get('/:nick' ,checkAuth, function(req, res, next) {
   Planet.findOne({nick:req.params.nick}, function(err,planet){
       if(err) return next(err)
       if(!planet) return next(new Error("Нет такой планеты в солнечной системе"))

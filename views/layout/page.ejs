@@ -29,15 +29,23 @@
               <div class="navbar-nav">
                 <a href="/" class="nav-item nav-link active">Главная</a>
 
-                  <% if(typeof nav == 'object' && nav){ nav.forEach(function(planet){ %>
-                    <li class="nav-item">
-                    <a class="nav-link" href="/planets/<%=planet.nick%>"><%=planet.title%></a>
-                    </li>
-                    <% })} %>
-                    
+                <% if(typeof nav=='object' && nav){ nav.forEach(function(planet){ %>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/planets/<%=planet.nick%>">
+                      <%=planet.title%>
+                    </a>
+                  </li>
+                  <% })} %>
+
               </div>
-              <div class="navbar-nav ms-auto">
-                <a href="/logreg" class="nav-item nav-link">Войти</a>
+              <div class="navbar-nav ms-auto nav navbar-nav navbar-right"">
+                <%if(user){%>
+                <form action=" /logout" method="post">
+                <button type="submit" class="btn btn-link">Выйти</button>
+                </form>
+                <% } else { %>
+                  <a href="/logreg" class="nav-item nav-link">Войти</a>
+                  <% } %>
               </div>
             </div>
           </div>

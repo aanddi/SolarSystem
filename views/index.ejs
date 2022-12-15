@@ -1,12 +1,16 @@
 <% layout('layout/page.ejs') %>
-<h1><%= title %></h1>
-<p>Welcome to <%= title %></p>
-<p>Счетчик: <%= counter %></p>
 
-<% if(user) {%>
-   <h1>Привет, <%= user.username %></h1>
-  <% }else{ %>
-   <h2>Зарегистрируйтесь, чтобы видеть все страницы сайта</h2>
-<% } %>
-  
-  
+   <div class="main-screen">
+      <div class="main-screen__user">
+         <% if(user) {%>
+            <h1>Привет, <%= user.username %>
+            </h1>
+            <% }else{ %>
+               <h2>Зарегистрируйтесь, чтобы видеть все страницы сайта</h2>
+               <% } %>
+      </div>
+
+      <div class="main-screen__counter">
+        Счетчик:  <%= counter %>
+      </div>
+   </div>

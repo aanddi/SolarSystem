@@ -19,16 +19,9 @@
       <div class="header__container">
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
           <div class="container-fluid">
-            <a href="/" class="navbar-brand">
-              <h3>Solar System</h3>
-            </a>
-            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse9">
-              <span class="navbar-toggler-icon"></span>
-            </button>
             <div class="collapse navbar-collapse" id="navbarCollapse9">
+              <div class="navbar-brand "><h3><a href="/" class="logo">Solar System</a></h3></div>
               <div class="navbar-nav">
-                <a href="/" class="nav-item nav-link active">Главная</a>
-
                 <% if(typeof nav=='object' && nav){ nav.forEach(function(planet){ %>
                   <li class="nav-item">
                     <a class="nav-link" href="/planets/<%=planet.nick%>">
@@ -36,12 +29,11 @@
                     </a>
                   </li>
                   <% })} %>
-
               </div>
               <div class="navbar-nav ms-auto nav navbar-nav navbar-right"">
                 <%if(user){%>
-                <form action=" /logout" method="post">
-                <button type="submit" class="btn btn-link">Выйти</button>
+                <form action="/logout" method="post">
+                <button type="submit" class="nav__btn nav-item nav-link">Выйти</button>
                 </form>
                 <% } else { %>
                   <a href="/logreg" class="nav-item nav-link">Войти</a>
@@ -51,7 +43,6 @@
           </div>
         </nav>
       </div>
-
     </header>
 
     <main class="page">

@@ -1,12 +1,12 @@
-var Planet = require("./../models/planet").Planet
+var db = require("../mySQLConnect.js");
 
-module.exports = function(req,res,next){
+module.exports = function (req, res, next) {
     res.locals.nav = []
 
-    Planet.find(null,{_id:0,title:1,nick:1},function(err,result){
-        if(err) throw err
-        res.locals.nav = result
+    db.query(`SELECT * FROM planets`, (err, planets) => {
+        if (err) throw err
+        res.locals.nav = planets
         next()
-    })
 
+    })
 }

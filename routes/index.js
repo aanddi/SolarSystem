@@ -1,20 +1,20 @@
 var express = require('express');
 var router = express.Router();
-var checkAuth = require("./../middleware/checkAuth.js")
-var Planet = require("../models/planet").Planet
-var User = require("./../models/user").User
+var db = require('../mySQLConnect')
+//var checkAuth = require("./../middleware/checkAuth.js")
+//var Planet = require("../models/planet").Planet
+//var User = require("./../models/user").User
 
-
-/* GET home page. */
-router.get('/', function (req, res, next) {
-  Planet.find({}, { _id: 0, title: 1, nick: 1 }, function (err, menu) {
-    req.session.greeting = "HelloWorld!",
-      res.cookie('greeting', 'HelloWorld!').render('index', {
-        title: 'Express',
-        menu: menu,
-        counter: req.session.counter
-      });
-  })
+// Главная (счетчик)
+router.get('/', function(req, res, next) {
+  db.query(`SELECT title, nick FROM planets`, (err, menu) => {
+    req.session.greeting = "HelloWorld",
+    res.cookie('gretting', 'HelloWorld').render('index', { 
+      title: 'Express',
+      menu: menu,
+      counter: req.session.counter
+    })
+  });
 });
 
 

@@ -7,12 +7,9 @@ var mysql2 = require('mysql2/promise');
 var session = require('express-session')
 var MySQLStore = require('express-mysql-session')(session);
 
-
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var planets = require('./routes/planets');
-
-// var MongoStore = require('connect-mongo');(session);
 
 var app = express();
 
@@ -37,9 +34,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-
 app.use(session({
-  secret: 'Solarsystem',
+  secret: 'SolarSystem',
   key: 'sid',
   store: sessionStore,
   resave: true,
@@ -47,13 +43,13 @@ app.use(session({
   cookie: {
     path: '/',
     httpOnly: true,
-    maxAge: 60 * 10000
+    maxAge: 60 * 1000
   }
 }));
 
 app.use(function (req, res, next) {
-  req.session.counter = req.session.counter + 1 || 1,
-    next()
+  req.session.counter = req.session.counter + 1 || 1
+  next()
 })
 
 app.use(require("./middleware/createMenu.js"))
@@ -64,7 +60,7 @@ app.use('/users', usersRouter);
 app.use('/planets', planets);
 
 
-// catch 404 and forward to error handler
+// поймать 404 и отправить обработчику ошибок
 app.use(function (req, res, next) {
   next(createError(404));
 });
@@ -84,8 +80,4 @@ app.use(function (err, req, res, next) {
       menu: []
     });
 });
-
-
 module.exports = app;
-
-

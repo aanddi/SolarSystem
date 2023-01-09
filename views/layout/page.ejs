@@ -20,27 +20,32 @@
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
           <div class="container-fluid">
             <div class="collapse navbar-collapse" id="navbarCollapse9">
-              <div class="navbar-brand "><h3><a href="/" class="logo">Solar System</a></h3></div>
-              <div class="navbar-nav">
-                <% if(typeof nav=='object' && nav){ nav.forEach(function(planet){ %>
+              <div class="navbar-brand ">
+                <h3><a href="/" class="logo">Solar System</a></h3>
+              </div>
+
+              <% if(typeof nav=='object' && nav){ nav.forEach(function(planet){ %>
+                <div class="navbar-nav">
                   <li class="nav-item">
                     <a class="nav-link" href="/planets/<%=planet.nick%>">
                       <%=planet.title%>
                     </a>
                   </li>
-                  <% })} %>
-              </div>
-              <div class="navbar-nav ms-auto nav navbar-nav navbar-right"">
-                <%if(user){%>
-                <form action="/logout" method="post">
-                <button type="submit" class="nav__btn nav-item nav-link">Выйти</button>
-                </form>
-                <% } else { %>
-                  <a href="/logreg" class="nav-item nav-link">Войти</a>
-                  <% } %>
-              </div>
+                </div>
+                <% })} %>
+
+                  <div class="navbar-nav ms-auto nav navbar-nav navbar-right">
+                    <%if (user.length > 0) { %>
+                      <form action="/logout" method="post">
+                        <button type="submit" class="nav__btn nav-item nav-link">Выйти</button>
+                      </form>
+                      <% } else { %>
+                        <a href="/logreg" class="nav-item nav-link">Войти</a>
+                        <% } %>
+                  </div>
             </div>
           </div>
+
         </nav>
       </div>
     </header>

@@ -2,14 +2,12 @@ var express = require('express');
 var router = express.Router();
 var db = require('../mySQLConnect.js');
 var checkAuth = require("./../middleware/checkAuth.js")
-//var Planet = require("../models/planet").Planet
-//var async = require("async")
 
-/* GET users listing. */
+// получение всех планет
 router.get('/', function (req, res, next) {
   res.send('Новый маршрутизатор, для маршрутов, начинающихся с planets');});
 
-/* Страница планет */
+// Страница планет 
 router.get("/:nick",checkAuth, function (req, res, next) {
   db.query(`SELECT * FROM planets WHERE planets.nick = '${req.params.nick}'`, (err, planets) => {
     if (err) {

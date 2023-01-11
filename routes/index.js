@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var db = require('../mySQLConnect')
-var checkAuth = require("./../middleware/checkAuth.js")
+var checkAuth = require("./../middleware/checkAuth.js") // подключение функции для закрытие контента
 
 // Главная (счетчик)
 router.get('/', function (req, res, next) {
@@ -15,20 +15,12 @@ router.get('/', function (req, res, next) {
   });
 });
 
-
-/* GET login/registration page. */
+// Страница для аунтефикации 
 router.get('/logreg', function(req, res, next) {
   res.render('logreg',{title: 'Вход', error:null});
 });
 
-router.post('/logout', function(req, res, next) {
-  req.session.destroy()
-  res.locals.user = null
-  res.redirect('/')
-});
-
-
-
+// кнопка войти в аккаунт
 router.post('/logreg', function (req, res, next) {
   var username = req.body.username
   var password = req.body.password
@@ -50,6 +42,13 @@ router.post('/logreg', function (req, res, next) {
       })
     }
   })
+});
+
+// Кнопка для выхода из залогиненного аккаунта
+router.post('/logout', function(req, res, next) {
+  req.session.destroy()
+  res.locals.user = null
+  res.redirect('/')
 });
 
 
